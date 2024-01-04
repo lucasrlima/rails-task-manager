@@ -1,0 +1,13 @@
+$gray-background: #F4F4F4;
+@import "task-card";
+@import "tasks-container";
+
+body {
+    font-family: sans-serif;
+    background: #F4F4F4;
+    margin: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,9 +1,30 @@
 <h2>My Tasks</h2>    
 
-<ul>
-    <% @tasks.each do |task| %> 
-        <li> <%=link_to task.title, task_path(task)  %> </li>
-    <% end %>
+    <div id="tasks-container">
+    
+        <div class="task-colunm">
+            <h2>To do</h2>
+            <% @tasks.each do |task| %> 
+                <% unless task.completed %>
+                <div id="task-card">
+                    <a> <%=link_to task.title, task_path(task)  %> </a>
+                </div>
+                <% end %>
+            <% end %>
+        </div>
 
-</ul>
+        <div class="task-colunm">
+            <h2>Done</h2>
+            <% @tasks.each do |task| %> 
+                <% if task.completed %>
+                <div id="task-card">
+                    <a> <%=link_to task.title, task_path(task)  %> </a>
+                </div>
+                <% end %>
+            <% end %>
+        </div>
+
+    </div>
+
 <p><%=link_to "New Task", new_task_path %> </p>
+
